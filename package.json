@@ -1,0 +1,27 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack --config webpack.config.js",
+    "build": "webpack"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "tucchun",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.2.0",
+    "eslint-plugin-react": "^7.1.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
