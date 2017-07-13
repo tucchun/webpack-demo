@@ -1,20 +1,22 @@
-var path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-    vendor: ['lodash']
-  },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'Output Management'
-    })
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, "dist")
-  }
+	entry: './src/index.js',
+
+	plugins: [
+		new webpack.HotModuleReplacementPlugin()
+	],
+
+	output: {
+		filename: 'main.js',
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
+	},
+
+	devServer: {
+		hot: true,
+		contentBase: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
+	}
 };
